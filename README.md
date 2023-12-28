@@ -4,7 +4,7 @@ markdown
 
 # Aplikasi Persewaan Mobil
 
-Deskripsi singkat proyek, misalnya: Aplikasi web untuk manajemen persewaan mobil.
+Aplikasi web untuk manajemen persewaan mobil.
 
 2.2. Petunjuk Instalasi
 
