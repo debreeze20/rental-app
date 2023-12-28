@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Daftar Mobil</title>
-</head>
-<body>
-
-<h2>Daftar Mobil</h2>
-
-<a href="{{ url('/cars/create') }}">Tambah Mobil</a>
-
-<ul>
 @extends('layouts.app')
 
 @section('content')
@@ -39,8 +27,3 @@
         </table>
     </div>
 @endsection
-
-</ul>
-
-</body>
-</html>
