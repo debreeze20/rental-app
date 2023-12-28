@@ -21,32 +21,31 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-Route::get('/register', [UserController::class, 'showRegistrationForm']);
-Route::post('/register', [UserController::class, 'register']);
+// Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Rute-rute lainnya
 
-Route::get('/cars', [CarController::class, 'index']);
-Route::get('/cars/create', [CarController::class, 'create']);
-Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+    Route::get('/register', [UserController::class, 'showRegistrationForm']);
+    Route::post('/register', [UserController::class, 'register']);
 
+    Route::get('/cars', [CarController::class, 'index']);
+    Route::get('/cars/create', [CarController::class, 'create']);
+    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
 
-Route::get('/bookings', [BookingController::class, 'index']);
-Route::get('/bookings/create', [BookingController::class, 'create']);
-Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+    Route::get('/bookings', [BookingController::class, 'index']);
+    Route::get('/bookings/create', [BookingController::class, 'create']);
+    Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
+    Route::get('/returns', [RentalReturnController::class, 'index']);
+    Route::get('/returns/create', [RentalReturnController::class, 'create']);
+    Route::post('/returns', [RentalReturnController::class, 'store'])->name('returns.store');
 
-Route::get('/returns', [RentalReturnController::class, 'index']);
-Route::get('/returns/create', [RentalReturnController::class, 'create']);
-Route::post('/returns', [RentalReturnController::class, 'store'])->name('returns.store');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+// });

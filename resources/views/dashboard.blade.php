@@ -3,7 +3,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Selamat Datang, {{ Auth::user()->name }}!</h2>
+    @auth
+        <h2>Selamat Datang, {{ Auth::user()->name }}!</h2>
+    @else
+        <p>Silakan login untuk mengakses dashboard.</p>
+    @endauth
 
     <!-- Informasi lainnya -->
 

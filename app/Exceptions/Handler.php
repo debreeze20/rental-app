@@ -47,15 +47,4 @@ class Handler extends ExceptionHandler
             //
         });
     }
-
-    
-    public function render($request, Throwable $exception)
-    {
-        // Menangani kesalahan umum
-        if ($exception instanceof \Exception) {
-            return response()->view('errors.general', [], 500);
-        }
-
-        return parent::render($request, $exception);
-    }
 }
