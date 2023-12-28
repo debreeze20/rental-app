@@ -14,7 +14,7 @@ markdown
 
 1. **Clone Repositori:**
    ```bash
-   git clone https://github.com/username/aplikasi-persewaan-mobil.git
+   git clone https://github.com/debreeze20/rental-app
 
     Masuk ke Direktori Proyek:
 

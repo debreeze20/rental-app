@@ -68,8 +68,8 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    protected function redirectTo()
-    {
-        return '/dashboard';
-    }
+    // protected function redirectTo()
+    // {
+    //     return '/dashboard';
+    // }
 }

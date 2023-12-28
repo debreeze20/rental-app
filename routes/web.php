@@ -24,8 +24,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-// Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    // Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // Rute-rute lainnya
 
@@ -48,4 +48,4 @@ Route::get('/', function () {
 
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
-// });
+});
